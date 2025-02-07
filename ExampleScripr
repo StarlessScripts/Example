@@ -50,7 +50,7 @@ local Section = Tab:Section({
     TextSize = 22, -- Default Size
 })
 local Section = Tab:Section({ 
-    Title = "https://discord.gg/HcssARw8 (DONT JOIN)",
+    Title = "(In work!)",
     TextXAlignment = "Center",
     TextSize = 20, -- Default Size
 })
