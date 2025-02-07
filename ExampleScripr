@@ -87,3 +87,36 @@ local Slider = Tab:Slider({
         sprintSpeed.Value = value
     end
 })
+local Button = Tab:Button({
+    Title = "Auto Win Red light, Green light",
+    Desc = "Tweens you to the pink line of red light, green light ",
+    Callback = function()
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+
+-- Get the local player and wait for their character to load
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Define the target CFrame using the provided numbers
+local targetCFrame = CFrame.new(
+	2243.99902, 446.683289, -90.3516769,
+	0.11444319, 9.02221515e-08, -0.99342978,
+	-7.62531638e-09, 1, 8.99404142e-08,
+	0.99342978, -2.71785194e-09, 0.11444319
+)
+
+-- Configure the tween (adjust duration and easing style as desired)
+local tweenInfo = TweenInfo.new(
+	3, -- duration in seconds
+	Enum.EasingStyle.Quad,
+	Enum.EasingDirection.Out
+)
+
+-- Create the tween to change the HumanoidRootPart's CFrame
+local tween = TweenService:Create(hrp, tweenInfo, {CFrame = targetCFrame})
+tween:Play()
+        print("Clicked!")
+    end,
+})
