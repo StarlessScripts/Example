@@ -1,13 +1,13 @@
 local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
 local Window = WindUI:CreateWindow({
-    Title = "AxiomHub | squid game x", -- UI Title
+    Title = "AstralHub | squid game x", -- UI Title
     Icon = "apple", -- Url or rbxassetid or lucide
     Author = ".Starless", -- Author & Creator
     Folder = "CloudHub", -- Folder name for saving data (And key)
     Size = UDim2.fromOffset(560, 350), -- UI Size
     KeySystem = { -- Creates key system
-        Key = "AxiomTeam", -- key
-        Note = "The Key is AxiomTeam", -- Note
+        Key = "AstralTeam", -- key
+        Note = "The Key is Free for now (AstralTeam)", -- Note
         URL = "https://github.com/Footagesus/WindUI", -- URL To get key (example: Discord)
         SaveKey = true, -- Saves the key in the folder specified above
     }, 
@@ -30,7 +30,7 @@ local Tab = Window:Tab({
 })
 Window:SelectTab(1) -- Number of Tab
 local Section = Tab:Section({ 
-    Title = "Axiom Hub:",
+    Title = "AstralHub:",
     TextXAlignment = "Center",
     TextSize = 30, -- Default Size
 })
