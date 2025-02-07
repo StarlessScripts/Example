@@ -109,12 +109,12 @@ local targetCFrame = CFrame.new(
 
 -- Configure the tween (adjust duration and easing style as desired)
 local tweenInfo = TweenInfo.new(
-	3, -- duration in seconds
+	50, -- duração em segundos (aumentada de 3 para 5)
 	Enum.EasingStyle.Quad,
 	Enum.EasingDirection.Out
 )
 
--- Create the tween to change the HumanoidRootPart's CFrame
+-- Cria o tween para mudar o CFrame do HumanoidRootPart
 local tween = TweenService:Create(hrp, tweenInfo, {CFrame = targetCFrame})
 tween:Play()
         print("Clicked!")
