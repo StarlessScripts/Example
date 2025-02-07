@@ -1,0 +1,90 @@
+local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
+local Window = WindUI:CreateWindow({
+    Title = "WindUI Library", -- UI Title
+    Icon = "image", -- Url or rbxassetid or lucide
+    Author = ".ftgs", -- Author & Creator
+    Folder = "CloudHub", -- Folder name for saving data (And key)
+    Size = UDim2.fromOffset(350, 460), -- UI Size
+    KeySystem = { -- Creates key system
+        Key = "AxiomTeam", -- key
+        Note = "The Key is AxiomTeam", -- Note
+        URL = "https://github.com/Footagesus/WindUI", -- URL To get key (example: Discord)
+        SaveKey = true, -- Saves the key in the folder specified above
+    }, 
+    Transparent = true,-- UI Transparency
+    Theme = "Dark", -- UI Theme
+    SideBarWidth = 170, -- UI Sidebar Width (number)
+    HasOutline = true, -- Adds Oultines to the window
+})
+Window:EditOpenButton({
+    Title = "Open Button",
+    Icon = "door-closed",
+    Color = ColorSequence.new(
+        Color3.fromHex("FFFFFF"), 
+        Color3.fromHex("000000")
+    )
+})
+local Tab = Window:Tab({
+    Title = "| Main",
+    Icon = "house", -- lucide or rbxassetid
+})
+Window:SelectTab(1) -- Number of Tab
+local Section = Tab:Section({ 
+    Title = "Axiom Hub:",
+    TextXAlignment = "Center",
+    TextSize = 30, -- Default Size
+})
+local Section = Tab:Section({ 
+    Title = "We are trying to do the best we can",
+    TextXAlignment = "Center",
+    TextSize = 25, -- Default Size
+})
+local Section = Tab:Section({ 
+    Title = "If u found a code/Ui Bugging",
+    TextXAlignment = "Center",
+    TextSize = 22, -- Default Size
+})
+local Section = Tab:Section({ 
+    Title = "Join at the discord",
+    TextXAlignment = "Center",
+    TextSize = 22, -- Default Size
+})
+local Section = Tab:Section({ 
+    Title = "https://discord.gg/HcssARw8 (DONT JOIN)",
+    TextXAlignment = "Center",
+    TextSize = 20, -- Default Size
+})
+local Section = Tab:Section({ 
+    Title = "The Discord are on Work Rn and More",
+    TextXAlignment = "Center",
+    TextSize = 20, -- Default Size
+})
+Window:SelectTab(2) -- Number of Tab
+
+local Tab = Window:Tab({
+    Title = "| Player Stgs.",
+    Icon = "settings-2", -- lucide or rbxassetid
+})
+
+-- Get the local player and ensure the Stats folder and SprintSpeed value exist
+local player = game.Players.LocalPlayer
+local stats = player:WaitForChild("Stats")
+local sprintSpeed = stats:WaitForChild("SprintSpeed")
+
+-- (Optional) Set a starting SprintSpeed value
+sprintSpeed.Value = 25.5
+
+-- Create a slider that will update the SprintSpeed value based on the slider number
+local Slider = Tab:Slider({
+    Title = "Sprint Speed",
+    Step = 1,
+    Value = {
+        Min = 20,
+        Max = 50,
+        Default = sprintSpeed.Value,  -- this uses the current SprintSpeed value (25.5)
+    },
+    Callback = function(value)
+        -- When the slider value changes, update SprintSpeed with the slider's number
+        sprintSpeed.Value = value
+    end
+})
