@@ -59,8 +59,6 @@ local Section = Tab:Section({
     TextXAlignment = "Center",
     TextSize = 20, -- Default Size
 })
-Window:SelectTab(2) -- Number of Tab
-
 local Tab = Window:Tab({
     Title = "| Player Stgs.",
     Icon = "settings-2", -- lucide or rbxassetid
